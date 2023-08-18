@@ -1,4 +1,6 @@
-export class AdWrapper extends HTMLElement {
+
+
+class ArticleDetail extends HTMLElement {
     constructor() {
       super();
   
@@ -9,25 +11,33 @@ export class AdWrapper extends HTMLElement {
                 <style>
                
                 </style>
-                <div>
-                <slot>
-                </slot>
-                </div>
+                <p></p>
               `;
   
 
-    }
+
+    this.contentElement = this.shadowRoot.querySelector('p');
+}
   
     static get observedAttributes() {
-      return ['class-prop'];
+      return ['class-prop', 'title', 'id'];
     }
   
+
+
+
     attributeChangedCallback(name, oldValue, newValue) {
    
     if (name === 'class-prop') {
         this.contentElement.className = newValue;
-      }
+      } else if (name === 'title') {
+        this.contentElement.setAttribute('title', newValue);
+      } else if (name === 'id') {
+        this.contentElement.id = newValue;
+      } 
     }
   }
   
-  customElements.define('ad-wrapper', AdWrapper);
+  customElements.define('article-detail', ArticleDetail);
+
+ 

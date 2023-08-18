@@ -16,7 +16,7 @@ export class ImageComponent extends HTMLElement {
   }
 
   static get observedAttributes() {
-    return ['src', 'title', 'label', 'size'];
+    return ['src', 'title', 'label', 'size', 'class-prop'];
   }
 
   attributeChangedCallback(name, oldValue, newValue) {
