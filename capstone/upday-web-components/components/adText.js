@@ -30,7 +30,6 @@ export class AdText extends HTMLElement {
                   <div  className="story-continues"><slot></slot></div>
                   </div>
                 `;
-  
       this.textContent = this.shadowRoot.querySelector('slot');
     }
   
