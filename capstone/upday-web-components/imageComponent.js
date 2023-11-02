@@ -7,9 +7,15 @@ export class ImageComponent extends HTMLElement {
     this.shadowRoot.innerHTML = `
               
               <style>
-             
+              .mobile {
+                background-position: 50% 50%;
+                background-size: cover;
+                height: 204px;
+                position: relative;
+                width: 360px;
+              }
               </style>
-              <img />
+              <img class="mobile"/>
             `;
 
     this.imgElement = this.shadowRoot.querySelector('img');

@@ -1,6 +1,6 @@
 
 
-class ArticleDetail extends HTMLElement {
+export class ArticleDetail extends HTMLElement {
     constructor() {
       super();
   
@@ -11,7 +11,7 @@ class ArticleDetail extends HTMLElement {
                 <style>
                
                 </style>
-                <p></p>
+                <p><slot></slot></p>
               `;
   
 
