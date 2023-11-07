@@ -1,9 +1,9 @@
 
-import ArticleDetail from './ArticleDetail.vue';
+import ArticleDescription from './ArticleDescription.vue';
 
 export default {
-    title: 'Example/ArticleDetail',
-    component: {ArticleDetail},
+    title: 'Test/ArticleDescription',
+    component: {ArticleDescription},
     argTypes: {
         primary: Boolean,
         backgroundColor: String,
@@ -17,13 +17,13 @@ export default {
   
   const Template = (args) => ({
     // Components used in your story `template` are defined in the `components` object
-    components: { ArticleDetail },
+    components: { ArticleDescription },
     // The story's `args` need to be mapped into the template through the `setup()` method
     setup() {
       return { args };
     },
     // And then the `args` are bound to your component with `v-bind="args"`
-    template: '<article-detail  :args="args"/>',
+    template: '<article-description  :args="args"/>',
   });
   
   export const Primary = Template.bind({});
