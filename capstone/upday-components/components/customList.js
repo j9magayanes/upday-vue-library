@@ -11,7 +11,7 @@ class CustomList extends HTMLElement {
             </style>
             <li class="item">
                 <input type="checkbox">
-                <label></label>
+                <slot></slot>
                 <button class="destroy"></button>
             </li>
         `
@@ -63,4 +63,4 @@ class CustomList extends HTMLElement {
     }
 }
 
-window.customElements.define('todo-item', TodoItem)
+customElements.define('custom-list', CustomList)

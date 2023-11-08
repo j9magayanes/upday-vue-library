@@ -1,43 +1,44 @@
 class FooterComponent extends HTMLElement {
     constructor() {
-      super();
-      this.attachShadow({ mode: 'open' });
+        super();
+    
+        this.attachShadow({ mode: 'open' });
+    
+        this.shadowRoot.innerHTML = `
+        <footer className='padded-lr'>
+        <ul>
+        <>
+            <li>
+             <a>
+                <slot></slot>
+              </a>
+            </li>
+            </>
+        </ul>
+        <p>Copyright 2023, upday GmbH & Co. KG</p>
+      </footer>
+                  `;
+        this.textContent = this.shadowRoot.querySelector('slot');
+        this.link = this.shadowRoot.querySelector('a');
+      }
+        
+    
+      static get observedAttributes() {
+        return [ 'text','class-prop', 'callback', 'href'];
+      }
+    
+      attributeChangedCallback(name, oldValue, newValue) {
+        if (name === 'class-prop') {
+            this.contentElement.class = newValue;
+        } else if (name === 'text') {
+          this.textContent.setAttribute('text', newValue);
+        } else if (name === 'callback') {
+            this.link.setAttribute('callback', newValue);
+          } else if (name === 'href'){
+            this.link.setAttribute('href', newValue);
+          }
+      }
     }
-  
-    // Define getters and setters for the props
-    get list() {
-      return JSON.parse(this.getAttribute('list'));
-    }
-  
-    set list(value) {
-      this.setAttribute('list', JSON.stringify(value));
-      this.render();
-    }
-  
-    get name() {
-      return this.getAttribute('name');
-    }
-  
-    set name(value) {
-      this.setAttribute('name', value);
-      this.render();
-    }
-  
-    connectedCallback() {
-      this.render();
-    }
-  
-    render() {
-      this.shadowRoot.innerHTML = `
-        <div>
-          <h2>${this.name}</h2>
-          <ul>
-            ${this.list.map(item => `<li>${item}</li>`).join('')}
-          </ul>
-        </div>
-      `;
-    }
-  }
   
   customElements.define('footer-component', FooterComponent);
   
