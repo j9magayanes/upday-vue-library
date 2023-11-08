@@ -1,6 +1,6 @@
 {
     "name": "upday-web-components",
-    "version": "1.0.19",
+    "version": "1.0.20",
     "description": "",
     "main": "counter.js",
     "scripts": {
