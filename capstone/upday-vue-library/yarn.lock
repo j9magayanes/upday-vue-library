@@ -6784,10 +6784,10 @@
     "escalade" "^3.1.1"
     "picocolors" "^1.0.0"
 
-"upday-web-components@^1.0.22":
-  "integrity" "sha512-+3/xWp9JQEYIPoBMX5H85+SGCvbFIm8igcfNxWz9i1SJjZgpf2CnrfAl9wKEg+kZ9Bd02IQQUDfdeRKg+0FH1g=="
-  "resolved" "https://registry.npmjs.org/upday-web-components/-/upday-web-components-1.0.22.tgz"
-  "version" "1.0.22"
+"upday-web-components@^1.0.23":
+  "integrity" "sha512-W9UyaCWxTEOBh29Nqo5y3mwgbk5P1/DNe1mH7VP72eH6/lbr4Px3ezrp418F8BWkdjdn3M5NPpnzxZndjKt6cw=="
+  "resolved" "https://registry.npmjs.org/upday-web-components/-/upday-web-components-1.0.23.tgz"
+  "version" "1.0.23"
 
 "uri-js@^4.2.2":
   "integrity" "sha512-7rKUyy33Q1yc98pQ1DAmLtwX109F7TIfWlW1Ydo8Wl1ii1SeHieeh0HHfPeL2fMXK6z0s8ecKs9frCuLJvndBg=="
