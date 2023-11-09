@@ -11,7 +11,7 @@ class ListComponent extends HTMLElement {
   attributeChangedCallback(name, oldValue, newValue) {
     if (name === 'items') {
       try {
-        const parsedItems = JSON.parse(newValue);
+        const parsedItems = newValue;
         this.renderList(parsedItems);
       } catch (error) {
         console.error('Error parsing JSON:', error);
