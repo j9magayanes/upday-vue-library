@@ -1,11 +1,11 @@
 <template>
-    <article-detail :id="args.id" :class="['storybook-title', `storybook-title--${args.size}`]">{{args.title }}</article-detail>
+    <relative-timestamp :id="args.id" :class="['storybook-title', `storybook-title--${args.size}`]">{{args.title }}</relative-timestamp>
   </template>
   
   <script>
-    import 'upday-web-components/components/articleDetail'; 
+    import 'upday-web-components/components/relativeTimestamp'; 
   export default {
-    name: 'article-description',
+    name: 'time-stamp',
     props: {
       primary: Boolean,
       backgroundColor: String,
@@ -20,6 +20,6 @@
   
   <style scoped>
   /* Import styles from the articleDetail.css file */
- @import './articleDescription.css'; 
+
   </style>
   

@@ -23,7 +23,7 @@
     "init-msw": "msw init public/"
   },
   "dependencies": {
-    "upday-web-components": "^1.0.12",
+    "upday-web-components": "^1.0.22",
     "vue": "^3.2.47"
   },
   "devDependencies": {

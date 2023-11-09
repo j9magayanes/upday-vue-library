@@ -8,7 +8,7 @@
   </template>
   
   <script>
-  import 'upday-web-components/adWrapper'; // Assuming adWrapper is a global component
+  import 'upday-web-components/components/adWrapper'; // Assuming adWrapper is a global component
   import AdImage from '../AdImage/AdImage.vue'; // Assuming ImageComponent is the Vue component for image
   
   export default {
