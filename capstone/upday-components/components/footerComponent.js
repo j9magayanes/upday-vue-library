@@ -2,37 +2,41 @@ class FooterComponent extends HTMLElement {
   constructor() {
     super();
     this.attachShadow({ mode: 'open' });
-    
-    this.shadowRoot.innerHTML = `
-      <footer class='padded-lr'>
-        <ul>
-          <li>
-            <a>
-              <slot></slot>
-            </a>
-          </li>
-        </ul>
-        <p>Copyright 2023, upday GmbH & Co. KG</p>
-      </footer>
-    `;
-
-    this.link = this.shadowRoot.querySelector('a');
   }
 
   static get observedAttributes() {
-    return ['class-prop', 'text', 'callback', 'href'];
+    return ['items'];
   }
 
   attributeChangedCallback(name, oldValue, newValue) {
-    if (name === 'class-prop') {
-      this.link.setAttribute('class', newValue);
-    } else if (name === 'text') {
-      this.link.textContent = newValue;
-    } else if (name === 'callback') {
-      // Handle callback attribute change if needed
-    } else if (name === 'href') {
-      this.link.setAttribute('href', newValue);
+    if (name === 'items') {
+      try {
+        const parsedItems = JSON.parse(newValue);
+        this.renderList(parsedItems);
+      } catch (error) {
+        console.error('Error parsing JSON:', error);
+      }
     }
+  }
+
+  renderList(items) {
+    this.shadowRoot.innerHTML = `
+      <style>
+        /* Add your CSS styles here */
+      </style>
+      <ul>
+        ${items.map((item, index) => `<li data-index="${index}"><a onClick=${item.href} href="${item.href}">${item.name}</a></li>`).join('')}
+      </ul>
+      <p>Copyright 2023, upday GmbH & Co. KG</p>
+    `;
+
+    const listItems = this.shadowRoot.querySelectorAll('li');
+    listItems.forEach((item) => {
+      item.addEventListener('click', () => {
+        const index = item.getAttribute('data-index');
+        this.dispatchEvent(new CustomEvent('item-clicked', { detail: { index, value: items[index] } }));
+      });
+    });
   }
 }
 

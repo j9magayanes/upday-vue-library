@@ -11,7 +11,7 @@ class ListComponent extends HTMLElement {
   attributeChangedCallback(name, oldValue, newValue) {
     if (name === 'items') {
       try {
-        const parsedItems = newValue;
+        const parsedItems = JSON.parse(newValue);
         this.renderList(parsedItems);
       } catch (error) {
         console.error('Error parsing JSON:', error);
@@ -30,7 +30,13 @@ class ListComponent extends HTMLElement {
       <p>Copyright 2023, upday GmbH & Co. KG</p>
     `;
 
-
+    const listItems = this.shadowRoot.querySelectorAll('li');
+    listItems.forEach((item) => {
+      item.addEventListener('click', () => {
+        const index = item.getAttribute('data-index');
+        this.dispatchEvent(new CustomEvent('item-clicked', { detail: { index, value: items[index] } }));
+      });
+    });
   }
 }
 
