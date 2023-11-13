@@ -37,7 +37,7 @@ export class CategoryDetail extends HTMLElement {
                 </style>
                 <div className="category">
                     <div className="TAG">
-                        <div className="text-wrapper">Politik</div>
+                        <div className="text-wrapper"><slot></slot></div>
                     </div>
                 </div>
               `;
