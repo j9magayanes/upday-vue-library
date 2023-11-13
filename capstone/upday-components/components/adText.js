@@ -39,7 +39,7 @@ export class AdText extends HTMLElement {
   
     attributeChangedCallback(name, oldValue, newValue) {
       if (name === 'class-prop') {
-          this.contentElement.clas = newValue;
+          this.contentElement.class = newValue;
       } else if (name === 'text') {
         this.textContent.setAttribute('text', newValue);
       }
