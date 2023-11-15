@@ -2,7 +2,7 @@
 import TitleDescription from './TitleDescription.vue';
 
 export default {
-    title: 'Test/TitleDescription',
+    title: 'Components/TitleDescription',
     component: {TitleDescription},
     argTypes: {
         primary: Boolean,

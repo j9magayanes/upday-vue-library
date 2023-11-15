@@ -1,9 +1,8 @@
-
-import HeaderSource from './HeaderSource.vue';
+import ReadButton from './ReadButton.vue';
 
 export default {
-    title: 'Test/HeaderSource',
-    component: {HeaderSource},
+    title: 'Components/ReadButton',
+    component: {ReadButton},
     argTypes: {
         label: String,
   args: Object
@@ -12,15 +11,15 @@ export default {
   
   const Template = (args) => ({
     // Components used in your story `template` are defined in the `components` object
-    components: { HeaderSource },
+    components: { ReadButton },
     // The story's `args` need to be mapped into the template through the `setup()` method
     setup() {
       return { args };
     },
     // And then the `args` are bound to your component with `v-bind="args"`
-    template: '<header-source  :args="args"/>',
+    template: '<read-button  :args="args"/>',
   });
   export const Meinestadt = Template.bind({});
   Meinestadt.args = {
-    args:{ appName: 'meinestadt',  source: 'Meinestadt', label: 'test'}
+    args:{ appName: 'meinestadt',  source: 'Meinestadt', label: 'test', text: "Read more"}
   };

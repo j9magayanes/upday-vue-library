@@ -1,6 +1,6 @@
 <template>
     <figure>
-      <ad-wrapper class="ad-block grow">
+      <ad-wrapper >
         <h3>Story continues below advertisement</h3>
         <ad-image :args="args"/>
       </ad-wrapper>

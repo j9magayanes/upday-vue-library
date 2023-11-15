@@ -1,5 +1,6 @@
 <template>
-    <article-source :class="meinestadt">{{args.source}}</article-source>
+    <article-source class="web">{{args.source}}</article-source>
+    <br/>
   </template>
   
   <script>
@@ -15,6 +16,8 @@
   
   <style scoped>
   /* Import styles from the articleDetail.css file */
-
+  .web {
+    margin: 40px;
+  }
   </style>
   

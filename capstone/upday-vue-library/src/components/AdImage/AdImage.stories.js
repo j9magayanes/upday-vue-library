@@ -2,7 +2,7 @@
 import AdImage from './AdImage.vue';
 
 export default {
-    title: 'Example/AdImage',
+    title: 'Components/AdImage',
     component: {AdImage},
     argTypes: {
         label: String,

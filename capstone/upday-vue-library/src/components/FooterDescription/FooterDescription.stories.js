@@ -1,7 +1,7 @@
 import FooterDescription from './FooterDescription.vue';
 
 export default {
-  title: 'Test/FooterDescription',
+  title: 'Components/FooterDescription',
   component: FooterDescription,
   argTypes: {
     items: {

@@ -1,9 +1,9 @@
 
-import TestImage from './TestImage.vue';
+import HeaderImage from './HeaderImage.vue';
 
 export default {
-    title: 'Example/TestImage',
-    component: {TestImage},
+    title: 'Components/HeaderImage',
+    component: {HeaderImage},
     argTypes: {
         label: String,
         src: String,
@@ -13,13 +13,13 @@ export default {
   
   const Template = (args) => ({
     // Components used in your story `template` are defined in the `components` object
-    components: { TestImage },
+    components: { HeaderImage },
     // The story's `args` need to be mapped into the template through the `setup()` method
     setup() {
       return { args };
     },
     // And then the `args` are bound to your component with `v-bind="args"`
-    template: '<test-image v-bind="args" :src="src"/>',
+    template: '<header-image v-bind="args" :src="src"/>',
   });
   
   export const Primary = Template.bind({});

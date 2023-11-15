@@ -1,5 +1,5 @@
 <template>
-    <relative-timestamp :id="args.id" :class="['storybook-title', `storybook-title--${args.size}`]">{{args.title }}</relative-timestamp>
+    <relative-timestamp class="web">{{args.time }}</relative-timestamp>
   </template>
   
   <script>
@@ -20,6 +20,8 @@
   
   <style scoped>
   /* Import styles from the articleDetail.css file */
-
+    .web {
+      margin-left: 40px
+    }
   </style>
   

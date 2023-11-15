@@ -1,6 +1,6 @@
 <template>
-    <figure>
-      <img  :src="src"/>
+    <figure >
+      <img  class="mobile" :src="args.src"/>
     </figure>
   </template>
   
@@ -19,10 +19,15 @@
   
   <style scoped>
   /* Styles specific to this component */
-  .meinestadt {
+  .web {
+    width: 360px;
+    height: 203px;
     /* Your styles for the image */
   }
-  
+  .mobile {
+    width: 110px;
+    height: 110px;
+  }
   /* Other styles from image.css */
   </style>
   

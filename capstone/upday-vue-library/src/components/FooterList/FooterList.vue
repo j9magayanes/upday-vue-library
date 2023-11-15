@@ -1,22 +1,42 @@
 <template>
-    <div>
-      <ul>
-        <h1>Test</h1>
-        <list-component :items="items"></list-component>
-      </ul>
+    <div class="footer">
+      <div class="li">
+      <list-component :items="items"></list-component>
+      </div>
     </div>
   </template>
   
   <script>
-     import 'upday-web-components/components/listComponent'; 
+   import 'upday-web-components/components/listComponent'; // Import the custom web component
   
   export default {
-    name: 'footer-list',
+    name: "footer-list",
     props: {
-      items: Array // List of items passed as a prop
+      items: String // List of items passed as a prop
     },
-    methods: {
-    }
   };
   </script>
+  
+  <style scoped>
+  /* Add your scoped CSS styles here */
+    .footer {
+    height: 80px;
+    font-size: 0.625rem;
+    line-height: 0.8125rem;
+    text-align: center;
+    color: #FFFFFF;
+    background: #50D4F5;
+    margin-top: 23px;
+    display: flex;
+    flex-direction: column;
+    justify-content: center;
+    }
+    .li {
+    font-weight: bold;
+    display: flex;
+    margin-right: auto;
+    margin-left: auto;
+    list-style: none;
+    }
+  </style>
   

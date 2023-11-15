@@ -1,7 +1,7 @@
 import TestList from './TestList.vue';
 
 export default {
-  title: 'Test/TestList',
+  title: 'Components/TestList',
   component: TestList,
   argTypes: {
     items: {
@@ -12,7 +12,7 @@ export default {
 
 const Template = (args, { argTypes }) => ({
   props: Object.keys(argTypes),
-  components: { FooterDescription },
+  components: { TestList },
   template: '<test-list :items="items" @toggleItem="toggleItem" @removeItem="removeItem" />',
 });
 

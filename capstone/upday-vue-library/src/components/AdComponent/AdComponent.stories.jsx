@@ -1,7 +1,7 @@
-import AdComponent from './Ad.vue';
+import AdComponent from './AdComponent.vue';
 
 export default {
-  title: 'Example/Ad',
+  title: 'Components/AdComponent',
   component: AdComponent,
   // This component will have an automatically generated Autodocs entry: https://storybook.js.org/docs/vue/writing-docs/autodocs
   tags: ['autodocs'],

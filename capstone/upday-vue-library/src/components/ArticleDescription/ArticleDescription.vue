@@ -1,5 +1,7 @@
 <template>
-    <article-detail :id="args.id" :class="['storybook-title', `storybook-title--${args.size}`]">{{args.title }}</article-detail>
+    <div  class="web">
+    <article-detail >{{args.description }}</article-detail>
+    </div>
   </template>
   
   <script>
@@ -11,7 +13,7 @@
       backgroundColor: String,
       size: String,
       label: String,
-      title: String,
+      description: String,
       id: String,
       args: Object
     }
@@ -20,6 +22,9 @@
   
   <style scoped>
   /* Import styles from the articleDetail.css file */
- @import './articleDescription.css'; 
+ @import './articleDescription.css';
+    .web {
+      margin: 40px
+    }
   </style>
   

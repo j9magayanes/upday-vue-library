@@ -1,6 +1,6 @@
 <template>
     <figure>
-      <article-title :id="args.id" :class="['storybook-title', `storybook-title--${args.size}`]">{{ args.title}}</article-title>
+      <article-title  >{{ args.title}}</article-title>
     </figure>
   </template>
   
@@ -23,7 +23,10 @@
   
   <style scoped>
   /* Styles specific to this component */
-
+  .web {
+    color: black;
+ 
+  }
   /* Other styles from image.css */
   </style>
   
