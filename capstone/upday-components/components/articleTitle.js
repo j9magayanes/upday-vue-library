@@ -20,7 +20,7 @@ export class ArticleTitle extends HTMLElement {
 }
 
   static get observedAttributes() {
-    return ['class-prop', 'title', 'id'];
+    return ['title', 'className', 'id'];
   }
 
 
@@ -28,7 +28,7 @@ export class ArticleTitle extends HTMLElement {
 
   attributeChangedCallback(name, oldValue, newValue) {
  
-  if (name === 'class-prop') {
+  if (name === 'className') {
       this.contentElement.className = newValue;
     } else if (name === 'title') {
       this.contentElement.setAttribute('title', newValue);

@@ -30,7 +30,7 @@ class ListComponent extends HTMLElement {
       <style>
         /* Add your CSS styles here */
       </style>
-      <ul style="list-style-type: none; display: flex; color:white">
+      <ul style="list-style-type: none; display: flex; color:white; margin: 0; padding: 0">
         ${items.map((item, index) => `<li data-index="${index}"><a href="${item.href}" style=" color:white; text-decoration:none; padding: 10px" >${item.name}</a></li>`).join('')}
       </ul>
       <p style=" color:white">Copyright 2023, upday GmbH & Co. KG</p>

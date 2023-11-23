@@ -30,25 +30,24 @@ class ArticleSource extends HTMLElement {
               
             
               </style>
-              <div class="source">
-              <div class="source-name"><slot></slot></div>
-              </div>
+              <span class="source-name">
+              </span>
             `;
-            this.textContent = this.shadowRoot.querySelector('.source-name');
+            this.articleSource = this.shadowRoot.querySelector('span');
 
 
   }
 
   static get observedAttributes() {
-    return ['class-prop', 'text'];
+    return ['className', 'text'];
   }
 
   attributeChangedCallback(name, oldValue, newValue) {
  
-  if (name === 'class-prop') {
-      this.contentElement.className = newValue;
+  if (name === 'className') {
+    this.articleSource.classList.add(newValue);
     }  else if (name === 'text') {
-      this.textContent.setAttribute('text', newValue);
+      this.articleSource.innerText = newValue;
     }
   }
 }

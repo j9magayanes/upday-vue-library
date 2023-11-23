@@ -11,16 +11,16 @@ export class ArticleDetail extends HTMLElement {
                 <style>
                
                 </style>
-                <p><slot></slot></p>
+                <div></div>
               `;
   
 
 
-    this.contentElement = this.shadowRoot.querySelector('p');
+    this.contentElement = this.shadowRoot.querySelector('div');
 }
   
     static get observedAttributes() {
-      return ['class-prop', 'title', 'id'];
+      return ['className', 'text'];
     }
   
 
@@ -28,13 +28,11 @@ export class ArticleDetail extends HTMLElement {
 
     attributeChangedCallback(name, oldValue, newValue) {
    
-    if (name === 'class-prop') {
-        this.contentElement.className = newValue;
-      } else if (name === 'title') {
-        this.contentElement.setAttribute('title', newValue);
-      } else if (name === 'id') {
-        this.contentElement.id = newValue;
-      } 
+    if (name === 'className') {
+        this.contentElement.classList = newValue;
+      } else if( name === 'text'){
+        this.contentElement.innerText = newValue;
+      }
     }
   }
   
