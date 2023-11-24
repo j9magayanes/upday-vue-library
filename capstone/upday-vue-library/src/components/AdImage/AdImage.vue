@@ -5,7 +5,7 @@
   </template>
   
   <script>
-  import 'upday-web-components/components/imageComponent'; // Assuming imageComponent is a global component
+  import '../../../../upday-components/components/imageComponent'; // Assuming imageComponent is a global component
   
   export default {
     name: 'ad-image',

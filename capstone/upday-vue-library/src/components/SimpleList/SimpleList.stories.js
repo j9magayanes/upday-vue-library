@@ -11,8 +11,24 @@ const Template = (args, { argTypes }) => ({
   template: '<simple-list :items="items"/>',
 });
 
-export const Default = Template.bind({});
-Default.args = {
+export const Web = Template.bind({});
+Web.args = {
+  items: '[{"name": "Item 1", "href": "https://example.com/item1"}, {"name": "Item 2", "href": "https://example.com/item2"}]'
+  ,
+};
+
+export const Huawei = Template.bind({});
+Huawei.args = {
+  items: '[{"name": "Item 1", "href": "https://example.com/item1"}, {"name": "Item 2", "href": "https://example.com/item2"}]'
+  ,
+};
+export const Oppo = Template.bind({});
+Oppo.args = {
+  items: '[{"name": "Item 1", "href": "https://example.com/item1"}, {"name": "Item 2", "href": "https://example.com/item2"}]'
+  ,
+};
+export const Samsung = Template.bind({});
+Samsung.args = {
   items: '[{"name": "Item 1", "href": "https://example.com/item1"}, {"name": "Item 2", "href": "https://example.com/item2"}]'
   ,
 };

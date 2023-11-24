@@ -22,8 +22,29 @@ export default {
     template: '<ad-image label="label" :args="args" />',
   });
   
-  export const Primary = Template.bind({});
-  Primary.args = {
+  export const Huawei = Template.bind({});
+  Huawei.args = {
+    label: 'Huawei',
+    size: 'mobile',
+    src: 'https://img.yana.asideas.de/image/upload/w_700,h_394,c_fill,f_webp,q_auto:eco/v1689066061/cms-cropped/hesgy7puvocvswz5pxw6.jpg',
+  }
+  ;
+  export const Samsung = Template.bind({});
+ Samsung.args = {
+    label: 'Samsung',
+    size: 'mobile',
+    src: 'https://img.yana.asideas.de/image/upload/w_700,h_394,c_fill,f_webp,q_auto:eco/v1689066061/cms-cropped/hesgy7puvocvswz5pxw6.jpg',
+  }
+  ;
+  export const Oppo = Template.bind({});
+  Oppo.args = {
+     label: 'Oppo',
+     size: 'mobile',
+     src: 'https://img.yana.asideas.de/image/upload/w_700,h_394,c_fill,f_webp,q_auto:eco/v1689066061/cms-cropped/hesgy7puvocvswz5pxw6.jpg',
+   }
+   ;
+  export const Web = Template.bind({});
+  Web.args = {
     label: 'Web',
     size: 'web',
     src: 'https://img.yana.asideas.de/image/upload/w_700,h_394,c_fill,f_webp,q_auto:eco/v1689066061/cms-cropped/hesgy7puvocvswz5pxw6.jpg',

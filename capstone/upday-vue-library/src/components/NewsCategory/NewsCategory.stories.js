@@ -20,7 +20,11 @@ export default {
     // And then the `args` are bound to your component with `v-bind="args"`
     template: '<news-category  :args="args"/>',
   });
-  export const Meinestadt = Template.bind({});
-  Meinestadt.args = {
+  export const Web = Template.bind({});
+  Web.args = {
+    args:{ appName: 'meinestadt',  category: 'Politik', label: 'test'}
+  };
+  export const Huawei = Template.bind({});
+  Huawei.args = {
     args:{ appName: 'meinestadt',  category: 'Politik', label: 'test'}
   };

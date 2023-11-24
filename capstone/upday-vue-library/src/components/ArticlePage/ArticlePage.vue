@@ -8,7 +8,7 @@
     <header-image :args="args"></header-image>
     <image-source :args="args"></image-source>
     <article-description :args="args"></article-description>
-    <read-button :args="args"></read-button>
+    <readmore-button :args="args"></readmore-button>
     <ad-component :args="args" ></ad-component>
     <article-card v-for="(value, key, index) in myObject" :key="index" :args="args">{{ item }}</article-card>
     <footer-list :items="items"/>
@@ -25,7 +25,7 @@ import HeaderImage from '../HeaderImage/HeaderImage.vue';
 import ImageSource from '../ImageSource/ImageSource.vue';
 import NewsCategory from '../NewsCategory/NewsCategory.vue';
 import NewsSource from '../NewsSource/NewsSource.vue';
-import ReadButton from '../ReadButton/ReadButton.vue';
+import ReadMoreButton from '../ReadMoreButton/ReadMoreButton.vue';
 import TimeStamp from '../TimeStamp/TimeStamp.vue';
 import TitleDescription from '../TitleDescription/TitleDescription.vue';
 
@@ -48,7 +48,7 @@ import TitleDescription from '../TitleDescription/TitleDescription.vue';
         HeaderImage,
         ImageSource,
         ArticleDescription,
-        ReadButton,
+        'readmore-button': ReadMoreButton,
         ArticleCard,
         FooterList
     },

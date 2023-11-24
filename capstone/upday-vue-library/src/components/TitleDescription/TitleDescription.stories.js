@@ -26,11 +26,37 @@ export default {
     template: '<title-description  :args="args"/>',
   });
   
-  export const Primary = Template.bind({});
-Primary.args = {
+  export const Web = Template.bind({});
+Web.args = {
     label: 'Meinestadt',
     title: 'TN PUSH: A primary school in Chester was put into lockdown after receiving a malicious email. The police launched an investigation into the threats, which were sent to several schools in the north west.',
     size: 'meinestadt',
     id: 'meinestadt',
 }
 ;
+
+export const Samsung = Template.bind({});
+Samsung.args = {
+    label: 'Meinestadt',
+    title: 'TN PUSH: A primary school in Chester was put into lockdown after receiving a malicious email. The police launched an investigation into the threats, which were sent to several schools in the north west.',
+    size: 'meinestadt',
+    id: 'meinestadt',
+}
+;
+export const Huawei = Template.bind({});
+Huawei.args = {
+    label: 'Meinestadt',
+    title: 'TN PUSH: A primary school in Chester was put into lockdown after receiving a malicious email. The police launched an investigation into the threats, which were sent to several schools in the north west.',
+    size: 'meinestadt',
+    id: 'meinestadt',
+}
+;
+export const Oppo = Template.bind({});
+Oppo.args = {
+    label: 'Meinestadt',
+    title: 'TN PUSH: A primary school in Chester was put into lockdown after receiving a malicious email. The police launched an investigation into the threats, which were sent to several schools in the north west.',
+    size: 'meinestadt',
+    id: 'meinestadt',
+}
+;
+

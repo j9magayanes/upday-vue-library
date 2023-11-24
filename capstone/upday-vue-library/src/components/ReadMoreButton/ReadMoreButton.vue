@@ -1,20 +1,14 @@
 <template>
     <div class="web">
     <read-more >{{args.text}}</read-more>
-    </div>
+  </div>
   </template>
   
   <script>
     import 'upday-web-components/components/readMore'; 
   export default {
-    name: 'read-button',
+    name: 'readmore-button',
     props: {
-      primary: Boolean,
-      backgroundColor: String,
-      size: String,
-      label: String,
-      title: String,
-      id: String,
       args: Object
     }
   };
@@ -24,7 +18,6 @@
   /* Import styles from the articleDetail.css file */
   .web {
     border: 1px solid #ccc;
-
     border: 1px solid #ccc;
     border-radius: 89px;
     color: #121212;
