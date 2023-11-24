@@ -8,7 +8,6 @@ class ListComponent extends HTMLElement {
     return ['items', 'class'];
   }
 
-  
   attributeChangedCallback(name, oldValue, newValue) {
     if (name === 'items') {
       try {
@@ -16,39 +15,40 @@ class ListComponent extends HTMLElement {
         this.renderList(parsedItems);
       } catch (error) {
         console.error('Error parsing JSON:', error);
-      } 
+      }
     } else if (name === 'class') {
       // Set the class directly on the ul element
       this.shadowRoot.querySelector('ul').setAttribute('class', newValue);
-    } 
+    }
   }
-
-
 
   renderList(items) {
     this.shadowRoot.innerHTML = `
       <style>
-        /* Add your CSS styles here */
       </style>
       <ul style="list-style-type: none; display: flex; color:white; margin: 0; padding: 0">
-        ${items.map((item, index) => `<li data-index="${index}"><a href="${item.href}" style=" color:white; text-decoration:none; padding: 10px" >${item.name}</a></li>`).join('')}
+        ${items
+          .map(
+            (item, index) =>
+              `<li data-index="${index}"><a href="${item.href}" style=" color:white; text-decoration:none; padding: 10px" >${item.name}</a></li>`
+          )
+          .join('')}
       </ul>
       <p style=" color:white">Copyright 2023, upday GmbH & Co. KG</p>
     `;
 
+    const listItems = this.shadowRoot.querySelectorAll('li');
 
-    
-    const listItems = this.shadowRoot.querySelectorAll('li')
-    
-    
     listItems.forEach((item) => {
       item.addEventListener('click', () => {
         const index = item.getAttribute('data-index');
-        this.dispatchEvent(new CustomEvent('item-clicked', { detail: { index, value: items[index] } }));
+        this.dispatchEvent(
+          new CustomEvent('item-clicked', {
+            detail: { index, value: items[index] },
+          })
+        );
       });
     });
-
-
   }
 }
 

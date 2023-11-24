@@ -5,7 +5,6 @@ class AdWrapper extends HTMLElement {
     this.attachShadow({ mode: 'open' });
 
     this.shadowRoot.innerHTML = `
-              
               <style>
               .ad-block {
                 background-color: #f2f2f2;
@@ -18,7 +17,6 @@ class AdWrapper extends HTMLElement {
                 margin: 16px 0;
                 position: relative;
               }
-              
               .grow {
                 flex-grow: 1;
               }
@@ -28,8 +26,6 @@ class AdWrapper extends HTMLElement {
               </slot>
               </div>
             `;
-
-
   }
 
   static get observedAttributes() {
@@ -37,8 +33,7 @@ class AdWrapper extends HTMLElement {
   }
 
   attributeChangedCallback(name, oldValue, newValue) {
- 
-  if (name === 'class-prop') {
+    if (name === 'class-prop') {
       this.contentElement.className = newValue;
     }
   }

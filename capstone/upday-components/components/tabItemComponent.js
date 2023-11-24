@@ -78,7 +78,6 @@ const styles = `
     flex-grow: 0;
     padding-right: 0.1em;
   }
-
   li a {
     border-radius: 38px;
     cursor: pointer;
@@ -93,14 +92,12 @@ const styles = `
     display: flex;
     align-items: center;
   }
-
   li.active a {
     font-weight: 700;
     background-color: rgba(0, 0, 0, 0.05);
     color: var(--font);
     letter-spacing: -0.5px;
   }
-
   @media (prefers-color-scheme: dark) {
     li a {
       color: white;

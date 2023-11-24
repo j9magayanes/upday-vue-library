@@ -2,7 +2,7 @@ class SimpleList extends HTMLElement {
   constructor() {
     super();
     this.attachShadow({ mode: 'open' });
-    
+
     this.shadowRoot.innerHTML = `
       <footer class='padded-lr'>
         <ul>

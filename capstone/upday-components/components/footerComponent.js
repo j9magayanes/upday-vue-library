@@ -22,10 +22,14 @@ class FooterComponent extends HTMLElement {
   renderList(items) {
     this.shadowRoot.innerHTML = `
       <style>
-        /* Add your CSS styles here */
       </style>
       <ul>
-        ${items.map((item, index) => `<li data-index="${index}"><a onClick=${item.href} href="${item.href}">${item.name}</a></li>`).join('')}
+        ${items
+          .map(
+            (item, index) =>
+              `<li data-index="${index}"><a onClick=${item.href} href="${item.href}">${item.name}</a></li>`
+          )
+          .join('')}
       </ul>
       <p>Copyright 2023, upday GmbH & Co. KG</p>
     `;
@@ -34,7 +38,11 @@ class FooterComponent extends HTMLElement {
     listItems.forEach((item) => {
       item.addEventListener('click', () => {
         const index = item.getAttribute('data-index');
-        this.dispatchEvent(new CustomEvent('item-clicked', { detail: { index, value: items[index] } }));
+        this.dispatchEvent(
+          new CustomEvent('item-clicked', {
+            detail: { index, value: items[index] },
+          })
+        );
       });
     });
   }

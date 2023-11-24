@@ -5,14 +5,12 @@ class ArticleSource extends HTMLElement {
     this.attachShadow({ mode: 'open' });
 
     this.shadowRoot.innerHTML = `
-              
               <style>
               .source {
                   height: 17px;
                   width: 312px;
                   background-color: #f2f2f2;
               }
-              
               .source .source-name {
                 background-color: #f2f2f2;
                   color: #7f7f7f;
@@ -27,15 +25,11 @@ class ArticleSource extends HTMLElement {
                   top: 0;
                   width: 312px;
               }
-              
-            
               </style>
               <span class="source-name">
               </span>
             `;
-            this.articleSource = this.shadowRoot.querySelector('span');
-
-
+    this.articleSource = this.shadowRoot.querySelector('span');
   }
 
   static get observedAttributes() {
@@ -43,10 +37,9 @@ class ArticleSource extends HTMLElement {
   }
 
   attributeChangedCallback(name, oldValue, newValue) {
- 
-  if (name === 'className') {
-    this.articleSource.classList.add(newValue);
-    }  else if (name === 'text') {
+    if (name === 'className') {
+      this.articleSource.classList.add(newValue);
+    } else if (name === 'text') {
       this.articleSource.innerText = newValue;
     }
   }

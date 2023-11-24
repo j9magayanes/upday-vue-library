@@ -12,7 +12,7 @@ export class CategoryDetail extends HTMLElement {
                     font-family: "Roboto";
                   }
                 </style>
-                        <div class="categoryDetail"><slot></slot></div>
+                <div class="categoryDetail"><slot></slot></div>
               `;
   }
 

@@ -1,10 +1,8 @@
-    
-          export class PopupNotify extends HTMLElement {
-            constructor() {
-                super();
-                this.attachShadow({mode: 'open'});
-                this.shadowRoot.innerHTML = `
-                
+export class PopupNotify extends HTMLElement {
+  constructor() {
+    super();
+    this.attachShadow({ mode: 'open' });
+    this.shadowRoot.innerHTML = `
                 <style>
                   .counter-container {
                     display: flex;
@@ -20,11 +18,8 @@
                 <div class="counter-container">
                     <h1>Test</h1>
                 </div>
-              `
-            
-            }
-        }
-        
-      customElements.define('popup-notify', PopupNotify)
-    
-    
+              `;
+  }
+}
+
+customElements.define('popup-notify', PopupNotify);

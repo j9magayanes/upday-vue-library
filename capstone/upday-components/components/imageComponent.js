@@ -5,7 +5,6 @@ export class ImageComponent extends HTMLElement {
     this.attachShadow({ mode: 'open' });
 
     this.shadowRoot.innerHTML = `
-              
               <style>
               .mobile {
                 background-position: 50% 50%;
@@ -30,11 +29,11 @@ export class ImageComponent extends HTMLElement {
       this.imgElement.setAttribute('src', newValue);
     } else if (name === 'title') {
       this.imgElement.setAttribute('title', newValue);
-    }  else if (name === 'label') {
+    } else if (name === 'label') {
       this.imgElement.setAttribute('label', newValue);
-    }   else if (name === 'size') {
+    } else if (name === 'size') {
       this.imgElement.setAttribute('size', newValue);
-    }else if (name === 'class-prop') {
+    } else if (name === 'class-prop') {
       this.contentElement.className = newValue;
     }
   }

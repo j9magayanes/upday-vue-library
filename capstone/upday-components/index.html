@@ -10,10 +10,19 @@
 <body>
     <!-- Custom Web Component -->
     <list-component items='[{"name": "Item 1", "href": "https://example.com/item1"}, {"name": "Item 2", "href": "https://example.com/item2"}]'></list-component>
-
+    <tab-component class-list="active"
+    class-link='element-with-ripple'
+    ref-link="your-ref-link"
+    aria-label="Your Aria Label"
+    href="your-href"
+    role="your-role"
+    text="Your Tab Name"
+    isActive="false"
+    active="false"></tab-component>
 
     <!-- Import Custom Web Component -->
     <script src="./components/listComponent.js"></script>
+    <script src="./components/tabComponent.js"></script>
 </body>
 
 </html>

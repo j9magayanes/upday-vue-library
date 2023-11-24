@@ -1,11 +1,10 @@
 export class AdText extends HTMLElement {
-    constructor() {
-      super();
-  
-      this.attachShadow({ mode: 'open' });
-  
-      this.shadowRoot.innerHTML = `
-                  
+  constructor() {
+    super();
+
+    this.attachShadow({ mode: 'open' });
+
+    this.shadowRoot.innerHTML = `
                   <style>
                   .label {
                     height: 14px;
@@ -24,27 +23,25 @@ export class AdText extends HTMLElement {
                     top: 0;
                     white-space: nowrap;
                     }
-                  
                   </style>
                   <div className="label">
                   <div  className="story-continues"><slot></slot></div>
                   </div>
                 `;
-      this.textContent = this.shadowRoot.querySelector('slot');
-    }
-  
-    static get observedAttributes() {
-      return [ 'text','class-prop'];
-    }
-  
-    attributeChangedCallback(name, oldValue, newValue) {
-      if (name === 'class-prop') {
-          this.contentElement.class = newValue;
-      } else if (name === 'text') {
-        this.textContent.setAttribute('text', newValue);
-      }
+    this.textContent = this.shadowRoot.querySelector('slot');
+  }
+
+  static get observedAttributes() {
+    return ['text', 'class-prop'];
+  }
+
+  attributeChangedCallback(name, oldValue, newValue) {
+    if (name === 'class-prop') {
+      this.contentElement.class = newValue;
+    } else if (name === 'text') {
+      this.textContent.setAttribute('text', newValue);
     }
   }
-  
-  customElements.define('ad-text', AdText);
-  
+}
+
+customElements.define('ad-text', AdText);
