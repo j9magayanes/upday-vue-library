@@ -18,7 +18,7 @@
     "vue": "3.2.25"
   },
   "dependencies": {
-    "upday-web-components": "^1.0.85",
+    "upday-web-components": "^1.0.86",
     "vue": "^3.3.8"
   },
   "devDependencies": {
