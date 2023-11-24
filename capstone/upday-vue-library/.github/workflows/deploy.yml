@@ -11,16 +11,16 @@ on:
 jobs:
   deploy-job:
     name: Deployment
-    uses: upday/gha-shared-workflow/.github/workflows/NodePipeline.yml@SRE-1275
+    uses: 
     with:
       project: upday
       node_version: 16.16.0
-      data_location: storybook-static
-      s3_staging_bucket_name: upday-react-ui-components-staging.upday.com
-      s3_prod_bucket_name: upday-react-ui-components-prod.upday.com
+      data_location: 
+      s3_staging_bucket_name: 
+      s3_prod_bucket_name: 
       skip_terraform: false
     secrets:
-      git_token: ${{ secrets.PAT_GIT }}
-      docker_username: ${{ secrets.DOCKER_USERNAME }}
-      docker_password: ${{ secrets.DOCKER_PASSWORD }}
-      deployment_notification_webhook: ${{ secrets.DEPLOYMENT_NOTIFICATION_WEBHOOK }}
+      git_token: 
+      docker_username:
+      docker_password:
+      deployment_notification_webhook: 
