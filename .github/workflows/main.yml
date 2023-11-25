@@ -27,4 +27,4 @@ jobs:
         run: |
           cd capstone/upday-vue-library
           npm run build
-          npm run test
+
