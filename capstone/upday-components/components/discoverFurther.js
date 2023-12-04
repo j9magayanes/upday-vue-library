@@ -1,4 +1,4 @@
-export class DiscoverFurther extends HTMLElement {
+class DiscoverFurther extends HTMLElement {
   constructor() {
     super();
 

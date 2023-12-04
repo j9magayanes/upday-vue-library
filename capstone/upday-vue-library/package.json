@@ -1,6 +1,6 @@
 {
   "name": "upday-vue-library",
-  "version": "0.2.35",
+  "version": "0.2.45",
   "private": false,
   "description": "Starter template to get up and running quickly with Vue and Storybook",
   "author": "Chromatic <https://chromatic.com/>",
@@ -18,7 +18,7 @@
     "vue": "3.2.25"
   },
   "dependencies": {
-    "upday-web-components": "^1.0.86",
+    "upday-web-components": "^1.1.6",
     "vue": "^3.3.8"
   },
   "devDependencies": {

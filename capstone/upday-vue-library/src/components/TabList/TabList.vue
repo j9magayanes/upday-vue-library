@@ -6,7 +6,6 @@
       :class-link="classLink"
       :ref-link="refLink"
       :aria-label="ariaLabel"
-      @pointer-down="handlePointerDown"
       :href="href"
       :role="role"
       :text="text"
@@ -32,6 +31,7 @@ export default {
     role: String,
     text: String,
     isActive: Boolean,
+
   },
   methods: {
     handlePointerDown(event) {

@@ -1,4 +1,4 @@
-export class PopupNotify extends HTMLElement {
+class PopupNotify extends HTMLElement {
   constructor() {
     super();
     this.attachShadow({ mode: 'open' });

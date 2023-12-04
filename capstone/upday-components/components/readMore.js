@@ -1,4 +1,4 @@
-export class ReadMore extends HTMLElement {
+class ReadMore extends HTMLElement {
   constructor() {
     super();
 

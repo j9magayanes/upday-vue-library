@@ -1,4 +1,4 @@
-export class AdText extends HTMLElement {
+class AdText extends HTMLElement {
   constructor() {
     super();
 

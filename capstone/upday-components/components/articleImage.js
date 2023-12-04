@@ -1,4 +1,4 @@
-export class ArticleImage extends HTMLElement {
+class ArticleImage extends HTMLElement {
   constructor() {
     super();
 

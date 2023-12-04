@@ -1,4 +1,4 @@
-export class HeaderComponent extends HTMLElement {
+class HeaderComponent extends HTMLElement {
   constructor() {
     super();
 

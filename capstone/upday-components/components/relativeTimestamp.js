@@ -1,4 +1,4 @@
-export class RelativeTimestamp extends HTMLElement {
+class RelativeTimestamp extends HTMLElement {
   constructor() {
     super();
 

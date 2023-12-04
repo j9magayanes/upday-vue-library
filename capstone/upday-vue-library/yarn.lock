@@ -12033,10 +12033,10 @@
     "escalade" "^3.1.1"
     "picocolors" "^1.0.0"
 
-"upday-web-components@^1.0.86":
-  "integrity" "sha512-HXUMCewD7lh3V2t9IjDI5Qo7a0gnEheUhM7ZxVGgT8+kn5itRHjHvj8rjYVxqzgfSTnS9FEbolpfZLI3xYXiqQ=="
-  "resolved" "https://registry.npmjs.org/upday-web-components/-/upday-web-components-1.0.86.tgz"
-  "version" "1.0.86"
+"upday-web-components@^1.1.6":
+  "integrity" "sha512-BWkHU7k7TGZ2CHHZJY+HV7Wz/eGQlHGiZHswRNEfGgsv/k7VTT7nC+kLWQ4dwsmt1l8E2/2CMba8g42iWmG1Og=="
+  "resolved" "https://registry.npmjs.org/upday-web-components/-/upday-web-components-1.1.6.tgz"
+  "version" "1.1.6"
 
 "uri-js@^4.2.2":
   "integrity" "sha512-7rKUyy33Q1yc98pQ1DAmLtwX109F7TIfWlW1Ydo8Wl1ii1SeHieeh0HHfPeL2fMXK6z0s8ecKs9frCuLJvndBg=="

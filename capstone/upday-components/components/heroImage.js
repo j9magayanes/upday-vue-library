@@ -1,4 +1,4 @@
-export class HeroImage extends HTMLElement {
+class HeroImage extends HTMLElement {
   constructor() {
     super();
 
