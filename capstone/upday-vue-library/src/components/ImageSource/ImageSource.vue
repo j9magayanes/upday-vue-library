@@ -1,9 +1,9 @@
 <template>
-    <image-credits class="web">{{args.credit}}</image-credits>
+    <article-source class="web">{{args.credit}}</article-source>
   </template>
   
   <script>
-    import 'upday-web-components/components/imageCredits'; 
+    import 'upday-web-components/components/articleSource'; 
   export default {
     name: 'image-source',
     props: {
