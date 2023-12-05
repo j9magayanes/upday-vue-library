@@ -1,8 +1,8 @@
 <template>
-    <div class="footer">
-      <div class="li">
+    <div class="padded-lr">
+ 
       <list-component :items="items"></list-component>
-      </div>
+
     </div>
   </template>
   
@@ -19,7 +19,7 @@
   
   <style scoped>
   /* Add your scoped CSS styles here */
-    .footer {
+    .padded-lr {
     height: 80px;
     font-size: 0.625rem;
     line-height: 0.8125rem;

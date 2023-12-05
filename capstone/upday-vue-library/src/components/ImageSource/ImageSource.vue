@@ -1,5 +1,5 @@
 <template>
-    <article-source class="web">{{args.credit}}</article-source>
+    <article-source class="web">{{credit}}</article-source>
   </template>
   
   <script>

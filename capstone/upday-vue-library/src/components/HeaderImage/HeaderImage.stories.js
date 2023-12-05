@@ -33,8 +33,8 @@ export default {
 
   export const Huawei = Template.bind({});
   Huawei.args = {
-    label: 'Web',
-    size: 'web',
+    label: 'huawei',
+    size: 'mobile',
     src: 'https://img.yana.asideas.de/image/upload/w_700,h_394,c_fill,f_webp,q_auto:eco/v1689066061/cms-cropped/hesgy7puvocvswz5pxw6.jpg',
     args:{   src: 'https://img.yana.asideas.de/image/upload/w_700,h_394,c_fill,f_webp,q_auto:eco/v1689066061/cms-cropped/hesgy7puvocvswz5pxw6.jpg',}
   }
@@ -42,8 +42,8 @@ export default {
 
   export const Oppo = Template.bind({});
   Oppo.args = {
-    label: 'Web',
-    size: 'web',
+    label: 'oppo',
+    size: 'mobile',
     src: 'https://img.yana.asideas.de/image/upload/w_700,h_394,c_fill,f_webp,q_auto:eco/v1689066061/cms-cropped/hesgy7puvocvswz5pxw6.jpg',
     args:{   src: 'https://img.yana.asideas.de/image/upload/w_700,h_394,c_fill,f_webp,q_auto:eco/v1689066061/cms-cropped/hesgy7puvocvswz5pxw6.jpg',}
   }
@@ -51,8 +51,8 @@ export default {
 
   export const Samsung = Template.bind({});
   Samsung.args = {
-    label: 'Web',
-    size: 'web',
+    label: 'samsung',
+    size: 'mobile',
     src: 'https://img.yana.asideas.de/image/upload/w_700,h_394,c_fill,f_webp,q_auto:eco/v1689066061/cms-cropped/hesgy7puvocvswz5pxw6.jpg',
     args:{   src: 'https://img.yana.asideas.de/image/upload/w_700,h_394,c_fill,f_webp,q_auto:eco/v1689066061/cms-cropped/hesgy7puvocvswz5pxw6.jpg',}
   }
