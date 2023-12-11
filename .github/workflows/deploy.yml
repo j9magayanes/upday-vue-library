@@ -15,7 +15,7 @@ jobs:
     with:
       project: upday
       node_version: 16.16.0
-      data_location: 
+      data_location: storybook-static
       s3_staging_bucket_name: upday-vue-ui-components-staging.upday.com
       s3_prod_bucket_name: upday-vue-ui-components-prod.upday.com
       skip_terraform: false
