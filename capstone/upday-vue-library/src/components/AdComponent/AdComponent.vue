@@ -2,7 +2,7 @@
     <figure data-cy="ad-component">
       <ad-wrapper >
         <h3>Story continues below advertisement</h3>
-        <ad-image :args="args"/>
+        <ad-image :args="args" alt-text="advertisement"/>
       </ad-wrapper>
     </figure>
   </template>

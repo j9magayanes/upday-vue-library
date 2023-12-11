@@ -16,6 +16,10 @@ describe('ArticlePage', () => {
     expect(props.category).toBe('Entertainment');
     expect(props.time).toBe('1d');
     expect(props.src).toBe('https://img.yana.asideas.de/image/upload/w_700,h_394,c_fill,f_webp,q_auto:eco/v1689066061/cms-cropped/hesgy7puvocvswz5pxw6.jpg');
+    expect(props.size).toBe('web');
+    expect(props.id).toBe('web');
+    expect(props.alt).toBe('article page')
+    expect(props.aria).toBe('article page')
   });
 
   it('renders with Huawei state', () => {
@@ -30,6 +34,10 @@ describe('ArticlePage', () => {
     expect(props.category).toBe('Entertainment');
     expect(props.time).toBe('1d');
     expect(props.src).toBe('https://img.yana.asideas.de/image/upload/w_700,h_394,c_fill,f_webp,q_auto:eco/v1689066061/cms-cropped/hesgy7puvocvswz5pxw6.jpg');
+    expect(props.size).toBe('mobile');
+    expect(props.id).toBe('huawei');
+    expect(props.alt).toBe('article page')
+    expect(props.aria).toBe('article page')
   });
   it('renders with Samsung state', () => {
     const wrapper = mount(ArticlePage, {
@@ -43,6 +51,10 @@ describe('ArticlePage', () => {
     expect(props.category).toBe('Entertainment');
     expect(props.time).toBe('1d');
     expect(props.src).toBe('https://img.yana.asideas.de/image/upload/w_700,h_394,c_fill,f_webp,q_auto:eco/v1689066061/cms-cropped/hesgy7puvocvswz5pxw6.jpg');
+    expect(props.size).toBe('mobile');
+    expect(props.id).toBe('samsung');
+    expect(props.alt).toBe('article page')
+    expect(props.aria).toBe('article page')
   });
   it('renders with Oppo state', () => {
     const wrapper = mount(ArticlePage, {
@@ -56,6 +68,10 @@ describe('ArticlePage', () => {
     expect(props.category).toBe('Entertainment');
     expect(props.time).toBe('1d');
     expect(props.src).toBe('https://img.yana.asideas.de/image/upload/w_700,h_394,c_fill,f_webp,q_auto:eco/v1689066061/cms-cropped/hesgy7puvocvswz5pxw6.jpg');
+    expect(props.size).toBe('mobile');
+    expect(props.id).toBe('oppo');
+    expect(props.alt).toBe('article page')
+    expect(props.aria).toBe('article page')
   });
 
 });

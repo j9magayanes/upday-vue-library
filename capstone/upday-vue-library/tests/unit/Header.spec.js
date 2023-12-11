@@ -13,6 +13,9 @@ describe('Header', () => {
     expect(props.user).toBe( {
       name: 'Jane Doe',
     });
+    expect(props.id).toBe('web');
+    expect(props.alt).toBe('log in')
+    expect(props.aria).toBe('log in')
   });
 
   it('renders with Loggedout state', () => {
@@ -23,6 +26,9 @@ describe('Header', () => {
     expect(wrapper.exists()).toBe(true);
     expect(props.user).toBe( {
       user: null,
-    }
+    });
+    expect(props.id).toBe('web');
+    expect(props.alt).toBe('log in')
+    expect(props.aria).toBe('log in')
   });
 });

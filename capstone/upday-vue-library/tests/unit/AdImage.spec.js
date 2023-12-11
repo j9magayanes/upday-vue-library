@@ -13,6 +13,9 @@ describe('AdImage', () => {
     expect(props.label).toBe('web');
     expect(props.size).toBe('web');
     expect(props.src).toBe('https://img.yana.asideas.de/image/upload/w_700,h_394,c_fill,f_webp,q_auto:eco/v1689066061/cms-cropped/hesgy7puvocvswz5pxw6.jpg');
+    expect(props.id).toBe('web');
+    expect(props.alt).toBe('advertisement image')
+    expect(props.aria).toBe('advertisement image')
   });
 
   it('renders with Huawei state', () => {
@@ -24,6 +27,9 @@ describe('AdImage', () => {
     expect(props.label).toBe('huawei');
     expect(props.size).toBe('mobile');
     expect(props.src).toBe('https://img.yana.asideas.de/image/upload/w_700,h_394,c_fill,f_webp,q_auto:eco/v1689066061/cms-cropped/hesgy7puvocvswz5pxw6.jpg');
+    expect(props.id).toBe('huawei');
+    expect(props.alt).toBe('advertisement image')
+    expect(props.aria).toBe('advertisement image')
   });
   it('renders with Samsung state', () => {
     const wrapper = mount(AdImage, {
@@ -34,6 +40,9 @@ describe('AdImage', () => {
     expect(props.label).toBe('Samsung');
     expect(props.size).toBe('mobile');
     expect(props.src).toBe('https://img.yana.asideas.de/image/upload/w_700,h_394,c_fill,f_webp,q_auto:eco/v1689066061/cms-cropped/hesgy7puvocvswz5pxw6.jpg');
+    expect(props.id).toBe('samsung');
+    expect(props.alt).toBe('advertisement image')
+    expect(props.aria).toBe('advertisement image')
   });
   it('renders with Oppo state', () => {
     const wrapper = mount(AdImage, {
@@ -44,6 +53,9 @@ describe('AdImage', () => {
     expect(props.label).toBe('huawei');
     expect(props.size).toBe('mobile');
     expect(props.src).toBe('https://img.yana.asideas.de/image/upload/w_700,h_394,c_fill,f_webp,q_auto:eco/v1689066061/cms-cropped/hesgy7puvocvswz5pxw6.jpg');
+    expect(props.id).toBe('oppo');
+    expect(props.alt).toBe('advertisement image')
+    expect(props.aria).toBe('advertisement image')
   });
   // Add more test cases for other states as needed
 });

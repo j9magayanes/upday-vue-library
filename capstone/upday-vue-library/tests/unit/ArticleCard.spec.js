@@ -16,6 +16,9 @@ describe('ArticleCard', () => {
     expect(props.category).toBe('Politik');
     expect(props.time).toBe('1d');
     expect(props.src).toBe('https://img.yana.asideas.de/image/upload/w_700,h_394,c_fill,f_webp,q_auto:eco/v1689066061/cms-cropped/hesgy7puvocvswz5pxw6.jpg');
+    expect(props.id).toBe('web');
+    expect(props.alt).toBe('article card')
+    expect(props.aria).toBe('article card')
   });
 
   it('renders with Huawei state', () => {
@@ -31,6 +34,9 @@ describe('ArticleCard', () => {
     expect(props.category).toBe('Politik');
     expect(props.time).toBe('1d');
     expect(props.src).toBe('https://img.yana.asideas.de/image/upload/w_700,h_394,c_fill,f_webp,q_auto:eco/v1689066061/cms-cropped/hesgy7puvocvswz5pxw6.jpg');
+    expect(props.id).toBe('Huawei');
+    expect(props.alt).toBe('article card')
+    expect(props.aria).toBe('article card')
   });
   it('renders with Samsung state', () => {
     const wrapper = mount(ArticleCard, {
@@ -46,6 +52,9 @@ describe('ArticleCard', () => {
     expect(props.category).toBe('Politik');
     expect(props.time).toBe('1d');
     expect(props.src).toBe('https://img.yana.asideas.de/image/upload/w_700,h_394,c_fill,f_webp,q_auto:eco/v1689066061/cms-cropped/hesgy7puvocvswz5pxw6.jpg');
+    expect(props.id).toBe('samsung');
+    expect(props.alt).toBe('article card')
+    expect(props.aria).toBe('article card')
   });
   it('renders with Oppo state', () => {
     const wrapper = mount(ArticleCard, {
@@ -60,6 +69,8 @@ describe('ArticleCard', () => {
     expect(props.category).toBe('Politik');
     expect(props.time).toBe('1d');
     expect(props.src).toBe('https://img.yana.asideas.de/image/upload/w_700,h_394,c_fill,f_webp,q_auto:eco/v1689066061/cms-cropped/hesgy7puvocvswz5pxw6.jpg');
-  
+    expect(props.id).toBe('oppo');
+    expect(props.alt).toBe('article card')
+    expect(props.aria).toBe('article card')
   });
 });
