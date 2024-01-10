@@ -16,8 +16,14 @@ class RecommendationComponent extends HTMLElement {
       name === 'label' ||
       name === 'size'
     ) {
+      // Validate and sanitize attribute values
+      const sanitizedValue = this.sanitizeInput(newValue);
+      this.setAttribute(name, sanitizedValue);
       this.render();
     } else if (name === 'class-prop') {
+      // Validate and sanitize the class value
+      const sanitizedValue = this.sanitizeInput(newValue);
+      this.setAttribute(name, sanitizedValue);
       this.render(newValue);
     }
   }
@@ -29,15 +35,20 @@ class RecommendationComponent extends HTMLElement {
     const size = this.getAttribute('size') || '';
 
     this.shadowRoot.innerHTML = `
-        <style>
-          /* Add custom styles for the header component */
-          /* Customize styles based on your requirements */
-        </style>
-        <div class="header-component ${classProp || ''}">
-          <img src="${src}" alt="${title}" title="${title}" label="${label}" size="${size}">
-          <h1>${title}</h1>
-        </div>
-      `;
+      <style>
+        /* Add custom styles for the recommendation component */
+        /* Customize styles based on your requirements */
+      </style>
+      <div class="recommendation-component ${classProp || ''}">
+        <img src="${src}" alt="${title}" title="${title}" label="${label}" size="${size}">
+        <h1>${title}</h1>
+      </div>
+    `;
+  }
+
+  sanitizeInput(value) {
+    // Basic input validation - allow alphanumeric characters and some common symbols
+    return value.replace(/[^a-zA-Z0-9\s_-]/g, '');
   }
 }
 

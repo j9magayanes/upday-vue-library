@@ -10,7 +10,7 @@ class PrivacySetting extends HTMLElement {
 
   attributeChangedCallback(name, oldValue, newValue) {
     if (name === 'custom-style') {
-      this.applyCustomStyle(newValue);
+      this.applyCustomStyle(sanitizeCSS(newValue));
     }
   }
 
@@ -26,3 +26,10 @@ class PrivacySetting extends HTMLElement {
 }
 
 customElements.define('privacy-setting', PrivacySetting);
+
+// Sanitize CSS to prevent potential security issues
+function sanitizeCSS(css) {
+  // Implement your CSS sanitization logic here
+  // This is a basic example, you may need a more sophisticated solution
+  return css.replace(/[^a-zA-Z0-9:;{}(),.]/g, '');
+}

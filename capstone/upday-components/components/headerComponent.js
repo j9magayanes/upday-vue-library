@@ -1,3 +1,4 @@
+import DOMPurify from 'dompurify';
 class HeaderComponent extends HTMLElement {
   constructor() {
     super();
@@ -17,16 +18,17 @@ class HeaderComponent extends HTMLElement {
   }
 
   attributeChangedCallback(name, oldValue, newValue) {
+    const sanitizedValue = DOMPurify.sanitize(newValue);
     if (name === 'src') {
-      this.imgElement.setAttribute('src', newValue);
+      this.imgElement.setAttribute('src', sanitizedValue);
     } else if (name === 'title') {
-      this.imgElement.setAttribute('title', newValue);
+      this.imgElement.setAttribute('title', sanitizedValue);
     } else if (name === 'label') {
-      this.imgElement.setAttribute('label', newValue);
+      this.imgElement.setAttribute('label', sanitizedValue);
     } else if (name === 'size') {
-      this.imgElement.setAttribute('size', newValue);
+      this.imgElement.setAttribute('size', sanitizedValue);
     } else if (name === 'class-prop') {
-      this.contentElement.className = newValue;
+      this.contentElement.className = sanitizedValue;
     }
   }
 }

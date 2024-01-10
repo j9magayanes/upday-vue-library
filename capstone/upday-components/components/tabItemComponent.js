@@ -1,3 +1,5 @@
+import DOMPurify from 'dompurify';
+
 class TabComponent extends HTMLElement {
   constructor() {
     super();
@@ -10,9 +12,8 @@ class TabComponent extends HTMLElement {
 
   attributeChangedCallback(name, oldValue, newValue) {
     if (name === 'name') {
-      this.name = newValue || '';
+      this.name = DOMPurify.sanitize(newValue || '');
     } else if (name === 'selected') {
-      // Use hasAttribute to check if the 'selected' attribute is present
       if (newValue === 'true') {
         this.setAttribute('selected', '');
       } else {
@@ -30,16 +31,16 @@ class TabComponent extends HTMLElement {
   render() {
     this.shadowRoot.innerHTML = `
       <style>
-        ${styles} <!-- Insert the scoped styles here -->
+        ${styles}
       </style>
       <li :class="{ active: this.hasAttribute('selected') }">
         <a
           class="element-with-ripple"
           ref="elementWithRipple"
           @pointerdown="createRippleAnimationFn($event, 'elementWithRipple')"
-          :href="${this.href}"
-          :aria-selected="this.hasAttribute('selected')"
-          :aria-label="this.t('Categories.' + this.name)"
+          href="${this.href}"
+          aria-selected="${this.hasAttribute('selected')}"
+          aria-label="${this.t('Categories.' + this.name)}"
           role="tab"
         >
           <slot></slot>
@@ -62,7 +63,7 @@ class TabComponent extends HTMLElement {
   }
 
   get href() {
-    return `#${this.name}`;
+    return `#${DOMPurify.sanitize(this.name)}`;
   }
 }
 

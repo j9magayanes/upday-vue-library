@@ -5,17 +5,17 @@ class HeroImage extends HTMLElement {
     this.attachShadow({ mode: 'open' });
 
     this.shadowRoot.innerHTML = `
-                <style>
-                .mobile {
-                  background-position: 50% 50%;
-                  background-size: cover;
-                  height: 204px;
-                  position: relative;
-                  width: 360px;
-                }
-                </style>
-                <img/>
-              `;
+      <style>
+        .mobile {
+          background-position: 50% 50%;
+          background-size: cover;
+          height: 204px;
+          position: relative;
+          width: 360px;
+        }
+      </style>
+      <img />
+    `;
 
     this.imgElement = this.shadowRoot.querySelector('img');
   }
@@ -34,7 +34,7 @@ class HeroImage extends HTMLElement {
     } else if (name === 'size') {
       this.imgElement.setAttribute('size', newValue);
     } else if (name === 'class-prop') {
-      this.contentElement.className = newValue;
+      this.imgElement.className = newValue; // Fix: use imgElement instead of contentElement
     }
   }
 }

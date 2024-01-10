@@ -4,18 +4,21 @@ class ArticleImage extends HTMLElement {
 
     this.attachShadow({ mode: 'open' });
 
-    this.shadowRoot.innerHTML = `
-                <style>
-                </style>
-                <figure>
-                <img/>
-                <figcaption><figcaption/>
-                <figure/>
-              `;
+    const figureElement = document.createElement('figure');
+    const imgElement = document.createElement('img');
+    const figCaptionElement = document.createElement('figcaption');
 
-    this.imgElement = this.shadowRoot.querySelector('img');
-    this.figureElement = this.shadowRoot.querySelector('figure');
-    this.figCaptionElement = this.shadowRoot.querySelector('figcaption');
+    this.shadowRoot.appendChild(document.createElement('style')).textContent = `
+      /* Add your styles here if needed */
+    `;
+
+    figureElement.appendChild(imgElement);
+    figureElement.appendChild(figCaptionElement);
+    this.shadowRoot.appendChild(figureElement);
+
+    this.imgElement = imgElement;
+    this.figureElement = figureElement;
+    this.figCaptionElement = figCaptionElement;
   }
 
   static get observedAttributes() {
@@ -28,11 +31,14 @@ class ArticleImage extends HTMLElement {
     } else if (name === 'alt') {
       this.imgElement.setAttribute('alt', newValue);
     } else if (name === 'imageRef') {
+      // Sanitize and validate 'ref' input if necessary
       this.imgElement.setAttribute('ref', newValue);
     } else if (name === 'figureRef') {
+      // Sanitize and validate 'ref' input if necessary
       this.figureElement.setAttribute('ref', newValue);
     } else if (name === 'photoCaption') {
-      this.figCaptionElement.innerText = newValue;
+      // Set text content using textContent
+      this.figCaptionElement.textContent = newValue;
     }
   }
 }

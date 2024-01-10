@@ -5,10 +5,12 @@ class DiscoverFurther extends HTMLElement {
     this.attachShadow({ mode: 'open' });
 
     this.shadowRoot.innerHTML = `
-                <style>
-                </style>
-                <h1><slot></slot></h1>
-              `;
+      <style>
+        /* Add your styles here */
+      </style>
+      <h1><slot></slot></h1>
+    `;
+
     this.contentElement = this.shadowRoot.querySelector('h1');
   }
 
@@ -18,13 +20,29 @@ class DiscoverFurther extends HTMLElement {
 
   attributeChangedCallback(name, oldValue, newValue) {
     if (name === 'class-prop') {
-      this.contentElement.className = newValue;
+      // Ensure that the contentElement is defined before setting the class
+      if (this.contentElement) {
+        this.contentElement.className = newValue;
+      }
     } else if (name === 'title') {
-      this.contentElement.setAttribute('title', newValue);
+      // Sanitize the title value before setting it
+      this.contentElement.setAttribute('title', sanitizeTitleValue(newValue));
     } else if (name === 'id') {
-      this.contentElement.id = newValue;
+      // Sanitize the id value before setting it
+      this.contentElement.id = sanitizeIdValue(newValue);
     }
   }
 }
 
 customElements.define('discover-further', DiscoverFurther);
+
+// Example sanitization functions
+function sanitizeTitleValue(value) {
+  // Remove any HTML tags to prevent script injection
+  return value.replace(/<[^>]*>/g, '');
+}
+
+function sanitizeIdValue(value) {
+  // Ensure that the value consists only of alphanumeric characters, dashes, or underscores
+  return value.replace(/[^a-zA-Z0-9-_]/g, '');
+}   

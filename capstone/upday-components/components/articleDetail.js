@@ -4,24 +4,31 @@ class ArticleDetail extends HTMLElement {
 
     this.attachShadow({ mode: 'open' });
 
-    this.shadowRoot.innerHTML = `
-                <style>
-                </style>
-                <div></div>
-              `;
+    const container = document.createElement('div');
 
-    this.contentElement = this.shadowRoot.querySelector('div');
+    const style = document.createElement('style');
+    style.textContent = `
+      /* Add your styles here if needed */
+    `;
+
+    this.shadowRoot.appendChild(style);
+    this.shadowRoot.appendChild(container);
+
+    this.contentElement = container;
   }
 
   static get observedAttributes() {
-    return ['className', 'text'];
+    return ['class-name', 'text'];
   }
 
   attributeChangedCallback(name, oldValue, newValue) {
-    if (name === 'className') {
-      this.contentElement.classList = newValue;
+    if (name === 'class-name') {
+      // Remove existing classes and add the new class
+      this.contentElement.className = '';
+      this.contentElement.classList.add(newValue);
     } else if (name === 'text') {
-      this.contentElement.innerText = newValue;
+      // Set text content using textContent
+      this.contentElement.textContent = newValue;
     }
   }
 }

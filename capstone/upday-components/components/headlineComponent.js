@@ -1,3 +1,5 @@
+import sanitizeCss from 'sanitize-css-value';
+
 class HeadlineComponent extends HTMLElement {
   constructor() {
     super();
@@ -15,9 +17,9 @@ class HeadlineComponent extends HTMLElement {
   }
 
   applyCustomStyle(css) {
-    const style = document.createElement('style');
-    style.textContent = css;
-    this.shadowRoot.appendChild(style);
+  
+    const sanitizedCss = sanitizeCss(css);
+    this.shadowRoot.innerHTML = `<style>${sanitizedCss}</style>`;
   }
 
   connectedCallback() {

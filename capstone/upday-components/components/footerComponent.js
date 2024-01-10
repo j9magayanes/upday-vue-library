@@ -1,3 +1,5 @@
+
+import DOMPurify from 'dompurify';
 class FooterComponent extends HTMLElement {
   constructor() {
     super();
@@ -20,23 +22,24 @@ class FooterComponent extends HTMLElement {
   }
 
   renderList(items) {
-    this.shadowRoot.innerHTML = `
+    this.shadowRoot.innerHTML = DOMPurify.sanitize(`
       <style>
       </style>
       <ul>
         ${items
           .map(
             (item, index) =>
-              `<li data-index="${index}"><a onClick=${item.href} href="${item.href}">${item.name}</a></li>`
+            `<li data-index="${index}"><a href="${item.href}">${item.name}</a></li>`
           )
           .join('')}
       </ul>
       <p>Copyright 2023, upday GmbH & Co. KG</p>
-    `;
+    `);
 
     const listItems = this.shadowRoot.querySelectorAll('li');
     listItems.forEach((item) => {
-      item.addEventListener('click', () => {
+      item.addEventListener('click', (event) => {
+        event.preventDefault();
         const index = item.getAttribute('data-index');
         this.dispatchEvent(
           new CustomEvent('item-clicked', {

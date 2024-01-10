@@ -2,18 +2,25 @@ class CategoryDetail extends HTMLElement {
   constructor() {
     super();
     this.attachShadow({ mode: 'open' });
-    this.shadowRoot.innerHTML = `
-                <style>
-                  .categoryDetail {
-                    color: gray;
-                    font-size: .75rem !important;
-                    padding-bottom: 12px;
-                    padding-top: 12px;
-                    font-family: "Roboto";
-                  }
-                </style>
-                <div class="categoryDetail"><slot></slot></div>
-              `;
+
+    const divElement = document.createElement('div');
+    divElement.classList.add('categoryDetail');
+
+    const style = document.createElement('style');
+    style.textContent = `
+      .categoryDetail {
+        color: gray;
+        font-size: 0.75rem;
+        padding-bottom: 12px;
+        padding-top: 12px;
+        font-family: "Roboto";
+      }
+    `;
+
+    this.shadowRoot.appendChild(style);
+    this.shadowRoot.appendChild(divElement);
+
+    this.contentElement = divElement;
   }
 
   static get observedAttributes() {
@@ -22,9 +29,11 @@ class CategoryDetail extends HTMLElement {
 
   attributeChangedCallback(name, oldValue, newValue) {
     if (name === 'class-prop') {
-      this.contentElement.class = newValue;
+      // Sanitize and validate class name if necessary
+      this.contentElement.className = newValue;
     } else if (name === 'category') {
-      this.imgElement.setAttribute('category', newValue);
+      // Sanitize and validate category attribute if necessary
+      this.contentElement.setAttribute('category', newValue);
     }
   }
 }

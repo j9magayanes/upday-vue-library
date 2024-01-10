@@ -17,8 +17,10 @@ class ListComponent extends HTMLElement {
         console.error('Error parsing JSON:', error);
       }
     } else if (name === 'class') {
+      // Ensure that the provided class value is safe
+      const sanitizedClass = sanitizeClassName(newValue);
       // Set the class directly on the ul element
-      this.shadowRoot.querySelector('ul').setAttribute('class', newValue);
+      this.shadowRoot.querySelector('ul').setAttribute('class', sanitizedClass);
     }
   }
 
@@ -30,7 +32,7 @@ class ListComponent extends HTMLElement {
         ${items
           .map(
             (item, index) =>
-              `<li data-index="${index}"><a href="${item.href}" style=" color:white; text-decoration:none; padding: 10px" >${item.name}</a></li>`
+              `<li data-index="${index}"><a href="${sanitizeURL(item.href)}" style=" color:white; text-decoration:none; padding: 10px" >${sanitizeText(item.name)}</a></li>`
           )
           .join('')}
       </ul>
@@ -53,3 +55,24 @@ class ListComponent extends HTMLElement {
 }
 
 customElements.define('list-component', ListComponent);
+
+// Sanitize class name to prevent potential security issues
+function sanitizeClassName(value) {
+  // Implement your sanitization logic here
+  // Example: Allow only alphanumeric characters and hyphens
+  return value.replace(/[^a-zA-Z0-9-]/g, '');
+}
+
+// Sanitize URL to prevent potential security issues
+function sanitizeURL(url) {
+  // Implement your sanitization logic here
+  // Example: Ensure that the URL is valid
+  return url.startsWith('http') ? url : '#';
+}
+
+// Sanitize text content to prevent potential security issues
+function sanitizeText(text) {
+  // Implement your sanitization logic here
+  // Example: Escape HTML entities
+  return text.replace(/</g, '&lt;').replace(/>/g, '&gt;');
+}

@@ -4,43 +4,43 @@ class ArticleSource extends HTMLElement {
 
     this.attachShadow({ mode: 'open' });
 
-    this.shadowRoot.innerHTML = `
-              <style>
-              .source {
-                  height: 17px;
-                  width: 312px;
-                  background-color: #f2f2f2;
-              }
-              .source .source-name {
-                background-color: #f2f2f2;
-                  color: #7f7f7f;
-                  font-family: "Inter-Bold", Helvetica;
-                  font-size: 12px;
-                  font-weight: 700;
-                  height: 17px;
-                  left: 0;
-                  letter-spacing: 0;
-                  line-height: 16.8px;
-                  position: fixed;
-                  top: 0;
-                  width: 312px;
-              }
-              </style>
-              <span class="source-name">
-              </span>
-            `;
-    this.articleSource = this.shadowRoot.querySelector('span');
+    const spanElement = document.createElement('span');
+
+    const style = document.createElement('style');
+    style.textContent = `
+      .source {
+        height: 17px;
+        width: 312px;
+        background-color: #f2f2f2;
+      }
+      .source .source-name {
+        background-color: #f2f2f2;
+        color: #7f7f7f;
+        font-family: "Inter-Bold", Helvetica;
+        font-size: 12px;
+        font-weight: 700;
+        height: 17px;
+        width: 100%;
+      }
+    `;
+
+    this.shadowRoot.appendChild(style);
+    this.shadowRoot.appendChild(spanElement);
+
+    this.articleSource = spanElement;
   }
 
   static get observedAttributes() {
-    return ['className', 'text'];
+    return ['class-name', 'text'];
   }
 
   attributeChangedCallback(name, oldValue, newValue) {
-    if (name === 'className') {
+    if (name === 'class-name') {
+      // Sanitize and validate class name if necessary
       this.articleSource.classList.add(newValue);
     } else if (name === 'text') {
-      this.articleSource.innerText = newValue;
+      // Set text content using textContent
+      this.articleSource.textContent = newValue;
     }
   }
 }
