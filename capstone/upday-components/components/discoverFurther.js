@@ -1,4 +1,5 @@
 class DiscoverFurther extends HTMLElement {
+<<<<<<< Updated upstream
   constructor() {
     super();
 
@@ -46,3 +47,50 @@ function sanitizeIdValue(value) {
   // Ensure that the value consists only of alphanumeric characters, dashes, or underscores
   return value.replace(/[^a-zA-Z0-9-_]/g, '');
 }   
+=======
+    constructor() {
+      super();
+      this.attachShadow({ mode: 'open' });
+      this.render();
+    }
+  
+    static get observedAttributes() {
+      return ['text', 'class-prop'];
+    }
+  
+    attributeChangedCallback(name, oldValue, newValue) {
+      if (name === 'class-prop') {
+        this.render(newValue);
+      } else if (name === 'text') {
+        this.render(null, newValue);
+      }
+    }
+  
+    render(classProp, text) {
+      this.shadowRoot.innerHTML = `
+        <style>
+          .label {
+            height: 14px;
+            width: 223px;
+          }
+          .label .story-continues {
+            color: #9c9c9c;
+            font-family: "Inter-Bold", Helvetica;
+            font-size: 10px;
+            font-weight: 700;
+            letter-spacing: 0;
+            line-height: 14px;
+            text-align: center;
+            white-space: nowrap;
+          }
+        </style>
+        <div class="label ${classProp || ''}">
+          <div class="story-continues">${text || ''}</div>
+        </div>
+      `;
+    }
+  }
+  
+  customElements.define('discover-further', DiscoverFurther);
+  
+>>>>>>> Stashed changes

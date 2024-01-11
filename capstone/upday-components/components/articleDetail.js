@@ -1,6 +1,7 @@
 class ArticleDetail extends HTMLElement {
   constructor() {
     super();
+<<<<<<< Updated upstream
 
     this.attachShadow({ mode: 'open' });
 
@@ -33,4 +34,36 @@ class ArticleDetail extends HTMLElement {
   }
 }
 
+=======
+    this.attachShadow({ mode: 'open' });
+    this.render();
+  }
+
+  static get observedAttributes() {
+    return ['class-prop', 'title', 'id'];
+  }
+
+  attributeChangedCallback(name, oldValue, newValue) {
+    if (name === 'class-prop') {
+      this.contentElement.className = newValue;
+    } else if (name === 'title') {
+      this.contentElement.title = newValue;
+    } else if (name === 'id') {
+      this.contentElement.id = newValue;
+    }
+  }
+
+  render() {
+    this.shadowRoot.innerHTML = `
+      <style>
+        /* Add custom styles for the article detail */
+        /* Customize styles based on your requirements */
+      </style>
+      <p><slot></slot></p>
+    `;
+    this.contentElement = this.shadowRoot.querySelector('p');
+  }
+}
+
+>>>>>>> Stashed changes
 customElements.define('article-detail', ArticleDetail);

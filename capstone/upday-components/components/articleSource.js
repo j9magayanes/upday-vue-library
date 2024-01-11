@@ -1,6 +1,7 @@
 class ArticleSource extends HTMLElement {
   constructor() {
     super();
+<<<<<<< Updated upstream
 
     this.attachShadow({ mode: 'open' });
 
@@ -43,6 +44,51 @@ class ArticleSource extends HTMLElement {
       this.articleSource.textContent = newValue;
     }
   }
+=======
+    this.attachShadow({ mode: 'open' });
+    this.render();
+  }
+
+  static get observedAttributes() {
+    return ['class-prop', 'text'];
+  }
+
+  attributeChangedCallback(name, oldValue, newValue) {
+    if (name === 'class-prop') {
+      this.render(newValue);
+    } else if (name === 'text') {
+      this.render(null, newValue);
+    }
+  }
+
+  render(classProp, text) {
+    this.shadowRoot.innerHTML = `
+      <style>
+        /* Add custom styles for the article source */
+        .source {
+          height: 17px;
+          width: 312px;
+          background-color: #f2f2f2;
+        }
+        
+        .source .source-name {
+          color: #7f7f7f;
+          font-family: "Inter-Bold", Helvetica;
+          font-size: 12px;
+          font-weight: 700;
+          height: 17px;
+          letter-spacing: 0;
+          line-height: 16.8px;
+          text-align: center;
+        }
+        ${classProp || ''}
+      </style>
+      <div class="source">
+        <div class="source-name">${text || ''}</div>
+      </div>
+    `;
+  }
+>>>>>>> Stashed changes
 }
 
 customElements.define('article-source', ArticleSource);
