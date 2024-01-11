@@ -18,7 +18,7 @@ export default {
       }
     },
     // Then, the spread values can be accessed directly in the template
-    template: '<article-card v-bind="args">'
+    template: '<article-card :args="args">'
   }),
   parameters: {
     // More on how to position stories at: https://storybook.js.org/docs/vue/configure/story-layout

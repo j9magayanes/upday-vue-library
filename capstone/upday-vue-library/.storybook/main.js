@@ -5,7 +5,7 @@ const config = {
   refs: {
     local: {
       title: 'Local',
-      url: 'http://localhost:6007',
+      url: 'http://localhost:6006',
     },
     remote: {
       title: 'Remote',

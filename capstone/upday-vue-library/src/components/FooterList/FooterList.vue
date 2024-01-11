@@ -1,8 +1,6 @@
 <template>
     <div class="padded-lr">
- 
       <list-component :items="items"></list-component>
-
     </div>
   </template>
   
@@ -30,6 +28,11 @@
     display: flex;
     flex-direction: column;
     justify-content: center;
+
+      align-items: center;
+    }
+    .ul {
+      align-content: center;
     }
     .li {
     font-weight: bold;
